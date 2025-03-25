@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="604.0" prefWidth="800.0" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.main.controller.AdminSidePaneController">
+    <children>
+        <VBox prefHeight="604.0" prefWidth="800.0">
+            <children>
+                <HBox alignment="CENTER" prefHeight="31.0" prefWidth="800.0" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+                    <children>
+                        <Label text="Therapist Performance" textAlignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="21.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="283.0" prefWidth="842.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+                    <children>
+                        <AreaChart fx:id="GraphTherapyPerform" prefHeight="278.0" prefWidth="800.0">
+                            <xAxis>
+                                <CategoryAxis fx:id="XTherapistPerform" side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis fx:id="YAxisTherapistPerform" side="LEFT" />
+                            </yAxis>
+                        </AreaChart>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox prefHeight="284.0" prefWidth="842.0" spacing="10.0">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="284.0" prefWidth="500.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+                            <children>
+                                <Label text="Therapy Session Statistics" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <LineChart fx:id="GraphTherapySessionStatics" prefHeight="260.0" prefWidth="480.0">
+                                    <xAxis>
+                                        <CategoryAxis fx:id="XTherapySession" side="BOTTOM" />
+                                    </xAxis>
+                                    <yAxis>
+                                        <NumberAxis fx:id="YTherapySession" side="LEFT" />
+                                    </yAxis>
+                                </LineChart>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </VBox>
+                        <VBox fx:id="menu" alignment="CENTER" prefHeight="284.0" prefWidth="320.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+                            <children>
+                                <Label text="Quick Navigation" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="82.0" prefWidth="300.0" spacing="10.0">
+                                    <children>
+                                        <Pane fx:id="PaneTherapist" onMouseClicked="#PaneTherapistOnAction" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #3498db; -fx-background-radius: 8;">
+                                            <children>
+                                                <Label alignment="CENTER" layoutX="-7.0" layoutY="7.0" prefHeight="20.0" prefWidth="75.0" text="Therapist" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="10.0" />
+                                                    </font>
+                                                </Label>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="20.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/icons8-medical-doctor-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" layoutX="-7.0" layoutY="46.0" prefHeight="20.0" prefWidth="75.0" text="0" textFill="WHITE">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                            </children>
+                                        </Pane>
+                                        <Pane fx:id="PanePatient" onMouseClicked="#PanePatientOnAction" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 8;">
+                                            <children>
+                                                <Label alignment="CENTER" layoutX="-9.0" layoutY="6.0" prefHeight="20.0" prefWidth="75.0" text="Patient" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="10.0" />
+                                                    </font>
+                                                </Label>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="20.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/icons8-customer-30.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" layoutX="-8.0" layoutY="46.0" prefHeight="20.0" prefWidth="75.0" text="0" textFill="WHITE">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                            </children>
+                                        </Pane>
+                                        <Pane fx:id="PaneUser" onMouseClicked="#PaneUserOnAction" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #9b59b6; -fx-background-radius: 8;">
+                                            <children>
+                                                <Label alignment="CENTER" layoutX="-9.0" layoutY="7.0" prefHeight="20.0" prefWidth="75.0" text="User" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="10.0" />
+                                                    </font>
+                                                </Label>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="19.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/icons8-customer-30.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" layoutX="-9.0" layoutY="47.0" prefHeight="20.0" prefWidth="75.0" text="0" textFill="WHITE">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                            </children>
+                                        </Pane>
+                                        <Pane fx:id="PaneProgram" onMouseClicked="#PaneProgramOnAction" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: #f39c12; -fx-background-radius: 8;">
+                                            <children>
+                                                <Label alignment="CENTER" layoutX="-9.0" layoutY="5.0" prefHeight="20.0" prefWidth="75.0" text="Program" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="10.0" />
+                                                    </font>
+                                                </Label>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="19.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/icons8-supplier-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" layoutX="-8.0" layoutY="45.0" prefHeight="20.0" prefWidth="75.0" text="0" textFill="WHITE">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </HBox>
+                                <JFXButton fx:id="BtnTrackPayments" buttonType="RAISED" onAction="#BtnTrackPaymentsOnAction" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #3498db; -fx-background-radius: 8;" text="Track Payments" textFill="WHITE">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../assets/icons8-payment-50.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="BtnFinacialReport" buttonType="RAISED" onAction="#BtnFinacialReportOnAction" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #3498db; -fx-background-radius: 8;" text="Financial Report" textFill="WHITE">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../assets/icons8-maximum-order-50.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="BtnPatientTherapyHistory" buttonType="RAISED" onAction="#BtnPatientTherapyHistoryOnAction" prefHeight="40.0" prefWidth="250.0" style="-fx-background-color: #3498db; -fx-background-radius: 8;" text="Patient Therapy History" textFill="WHITE">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../assets/icons8-therapy-30.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </JFXButton>
+                            </children>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                            </padding>
+                        </VBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

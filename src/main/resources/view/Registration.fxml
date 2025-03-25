@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" prefHeight="604.0" prefWidth="800.0" style="-fx-background-color: #f5f5f7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.controller.RegistrationController">
+    <children>
+        <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#ffffff" height="648.0" layoutX="12.0" layoutY="11.0" stroke="TRANSPARENT" strokeType="INSIDE" width="777.0">
+            <effect>
+                <DropShadow>
+                    <color>
+                        <Color opacity="0.15" />
+                    </color>
+                </DropShadow>
+            </effect>
+        </Rectangle>
+        <VBox layoutX="30.0" layoutY="30.0" prefHeight="604.0" prefWidth="740.0" spacing="15.0">
+            <children>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="740.0">
+                    <children>
+                        <Button fx:id="BtnViewAll" mnemonicParsing="false" onAction="#BtnViewAllOnAction" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #0071e3; -fx-background-radius: 8;" text="View All" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <effect>
+                                <DropShadow height="4.0" radius="1.5" width="4.0">
+                                    <color>
+                                        <Color opacity="0.25" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                        </Button>
+                        <Text fill="#3a3a3c" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration" textAlignment="CENTER" wrappingWidth="300.0">
+                            <font>
+                                <Font name="System Bold" size="34.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="50.0" right="50.0" />
+                            </HBox.margin>
+                        </Text>
+                        <Button fx:id="BtnPayment" mnemonicParsing="false" onAction="#BtnPaymentOnAction" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #0071e3; -fx-background-radius: 8;" text="Payment" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <effect>
+                                <DropShadow height="4.0" radius="1.5" width="4.0">
+                                    <color>
+                                        <Color opacity="0.25" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                        </Button>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="740.0" style="-fx-background-color: #f0f0f2; -fx-background-radius: 10;">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="370.0">
+                            <children>
+                                <Text fill="#555557" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration Id:" wrappingWidth="122.13674926757812">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="TxtRegId" fill="#0071e3" strokeType="OUTSIDE" strokeWidth="0.0" text="R-1" wrappingWidth="98.93673706054688">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                            <padding>
+                                <Insets left="20.0" />
+                            </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="370.0">
+                            <children>
+                                <Text fill="#555557" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:" wrappingWidth="50.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="TextDate" fill="#0071e3" strokeType="OUTSIDE" strokeWidth="0.0" text="2025/03/23" wrappingWidth="98.93673706054688">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                            <padding>
+                                <Insets right="20.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                </HBox>
+                <HBox prefHeight="30.0" prefWidth="740.0">
+                    <children>
+                        <Text fill="#3a3a3c" strokeType="OUTSIDE" strokeWidth="0.0" text="Patient Details" wrappingWidth="200.0">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="740.0" spacing="15.0" style="-fx-background-color: #f0f0f2; -fx-background-radius: 10;">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                            <children>
+                                <Text fill="#555557" strokeType="OUTSIDE" strokeWidth="0.0" text="Id" wrappingWidth="80.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Text>
+                                <TextField fx:id="TxtEmail" prefHeight="35.0" prefWidth="200.0" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e1e1e1; -fx-border-width: 1; -fx-background-color: white;">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                            <padding>
+                                <Insets left="20.0" />
+                            </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0">
+                            <children>
+                                <Text fill="#555557" strokeType="OUTSIDE" strokeWidth="0.0" text="Id-Name" wrappingWidth="80.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Text>
+                                <TextField fx:id="TxtIdName" prefHeight="35.0" prefWidth="200.0" promptText="example" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e1e1e1; -fx-border-width: 1; -fx-background-color: white;">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <Button fx:id="BtnAdd" mnemonicParsing="false" onAction="#BtnAddOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #34c759; -fx-background-radius: 8;" text="Add" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <effect>
+                                <DropShadow height="4.0" radius="1.5" width="4.0">
+                                    <color>
+                                        <Color opacity="0.25" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                    </padding>
+                </HBox>
+                <HBox prefHeight="30.0" prefWidth="740.0">
+                    <children>
+                        <Text fill="#3a3a3c" strokeType="OUTSIDE" strokeWidth="0.0" text="Therapy Programs" wrappingWidth="300.0">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Text>
+                        <Text fill="#3a3a3c" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration" wrappingWidth="200.0">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="80.0" />
+                            </HBox.margin>
+                        </Text>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="740.0" spacing="15.0" style="-fx-background-color: #f0f0f2; -fx-background-radius: 10;">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="350.0">
+                            <children>
+                                <ComboBox fx:id="CmbTherapyPrograms" onAction="#CmbTherapyProgramsOnAction" prefHeight="35.0" prefWidth="300.0" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-background-color: white; -fx-border-color: #e1e1e1; -fx-border-width: 1;" />
+                            </children>
+                            <padding>
+                                <Insets left="20.0" />
+                            </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="370.0">
+                            <children>
+                                <Text fill="#555557" strokeType="OUTSIDE" strokeWidth="0.0" text="Upfront Payment" wrappingWidth="130.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Text>
+                                <TextField fx:id="TxtUpfrontPayment" prefHeight="35.0" prefWidth="200.0" promptText="0.0" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e1e1e1; -fx-border-width: 1; -fx-background-color: white;">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="740.0" spacing="15.0" style="-fx-background-color: #f0f0f2; -fx-background-radius: 10;">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="350.0">
+                            <children>
+                                <Text fill="#555557" strokeType="OUTSIDE" strokeWidth="0.0" text="Duration" wrappingWidth="80.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="TxtDuration" fill="#0071e3" strokeType="OUTSIDE" strokeWidth="0.0" text="10" wrappingWidth="80.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                            <padding>
+                                <Insets left="20.0" />
+                            </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="370.0">
+                            <children>
+                                <Text fill="#555557" strokeType="OUTSIDE" strokeWidth="0.0" text="Remaining Balance" wrappingWidth="130.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Text>
+                                <TextField fx:id="TxtBalance" prefHeight="35.0" prefWidth="200.0" promptText="0.0" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e1e1e1; -fx-border-width: 1; -fx-background-color: white;">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="740.0" spacing="15.0" style="-fx-background-color: #f0f0f2; -fx-background-radius: 10;">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="350.0">
+                            <children>
+                                <Text fill="#555557" strokeType="OUTSIDE" strokeWidth="0.0" text="Fee" wrappingWidth="80.0">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Text>
+                                <Text fx:id="TxtFee" fill="#0071e3" strokeType="OUTSIDE" strokeWidth="0.0" text="10" wrappingWidth="80.0">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                            <padding>
+                                <Insets left="20.0" />
+                            </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="370.0">
+                            <children>
+                                <Button fx:id="BtnRegister" mnemonicParsing="false" onAction="#BtnRegisterOnAction" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #34c759; -fx-background-radius: 8;" text="Register" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <effect>
+                                        <DropShadow height="4.0" radius="1.5" width="4.0">
+                                            <color>
+                                                <Color opacity="0.25" />
+                                            </color>
+                                        </DropShadow>
+                                    </effect>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets right="20.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                    </padding>
+                </HBox>
+                <TableView fx:id="TblRegistration" onMouseClicked="#TblRegistrationOnAction" prefHeight="127.0" prefWidth="740.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #e1e1e1; -fx-border-width: 1;">
+                    <columns>
+                        <TableColumn fx:id="ColId" prefWidth="75.0" text="Id" />
+                        <TableColumn fx:id="ColPatient" prefWidth="144.0" text="Patient" />
+                        <TableColumn fx:id="ColProgram" prefWidth="184.79998779296875" text="Program" />
+                        <TableColumn fx:id="ColFee" prefWidth="142.4000244140625" text="Fee" />
+                        <TableColumn fx:id="ColAdvance" prefWidth="140.800048828125" text="Advance" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="740.0">
+                    <children>
+                        <Button fx:id="BtnConfirm" mnemonicParsing="false" onAction="#BtnConfirmOnAction" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #0071e3; -fx-background-radius: 8;" text="Confirm" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <effect>
+                                <DropShadow height="4.0" radius="1.5" width="4.0">
+                                    <color>
+                                        <Color opacity="0.25" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
