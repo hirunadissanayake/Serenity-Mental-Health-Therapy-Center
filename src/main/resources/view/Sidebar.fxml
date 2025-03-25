@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnc" prefHeight="616.0" prefWidth="1100.0" style="-fx-background-color: #f5f7fa;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.main.controller.SidebarController">
+   <children>
+      <!-- Decorative elements -->
+      <Circle layoutX="97.0" layoutY="67.0" radius="120.0" style="-fx-fill: #6c5ce7; -fx-opacity: 0.1;" />
+      <Circle layoutX="850.0" layoutY="550.0" radius="80.0" style="-fx-fill: #00cec9; -fx-opacity: 0.1;" />
+
+      <!-- Logo in top left -->
+      <Circle layoutX="80.0" layoutY="47.0" radius="20.0" style="-fx-fill: #6c5ce7;" />
+      <Label layoutX="110.0" layoutY="37.0" text="Serenity Mental" textFill="#2d3436">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+
+      <AnchorPane fx:id="ancLoading" layoutX="286.0" layoutY="15.0" prefHeight="604.0" prefWidth="800.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+         <effect>
+            <DropShadow height="20.0" radius="9.5" width="20.0">
+               <color>
+                  <Color opacity="0.1" />
+               </color>
+            </DropShadow>
+         </effect>
+      </AnchorPane>
+
+      <Pane layoutX="14.0" layoutY="90.0" prefHeight="500.0" prefWidth="260.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+         <effect>
+            <DropShadow height="20.0" radius="9.5" width="20.0">
+               <color>
+                  <Color opacity="0.1" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <VBox layoutX="15.0" layoutY="15.0" prefHeight="470.0" prefWidth="230.0" spacing="12.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="230.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="41.0" prefWidth="230.0" text="Dashboard" textFill="#2d3436">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+
+                  <Separator prefHeight="2.0" prefWidth="230.0" />
+
+                  <JFXButton fx:id="btnDashboard" onAction="#btnDashboardOnAction" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #6c5ce7; -fx-background-radius: 8;" text="Dashboard" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8-maximum-order-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow height="10.0" radius="4.5" width="10.0">
+                           <color>
+                              <Color opacity="0.2" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </JFXButton>
+
+                  <JFXButton fx:id="btnPatient" onAction="#btnPatientOnAction" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8;" text="Patient" textFill="#636e72">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8-customer-30.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+
+                  <JFXButton fx:id="btnTherapist" onAction="#btnPatientOnAction" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8;" text="Therapist" textFill="#636e72">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8-medical-doctor-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+
+                  <JFXButton fx:id="btnTherapyPro" onAction="#btnTherapyProOnAction" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8;" text="Therapy Program" textFill="#636e72">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8-supplier-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+
+                  <JFXButton prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8;" text="Registration" textFill="#636e72">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8-add-user-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+
+                  <JFXButton fx:id="btnTherapySession" onAction="#btnTherapySessionOnAction" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8;" text="Therapy Session" textFill="#636e72">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8-therapy-30.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+
+                  <JFXButton fx:id="btnPayment" onAction="#btnPaymentOnAction" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8;" text="Payments" textFill="#636e72">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8-payment-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+
+                  <JFXButton fx:id="btnUser" onAction="#btnUserOnAction" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8;" text="User" textFill="#636e72">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8-customer-30.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+
+                  <Separator prefHeight="2.0" prefWidth="230.0" />
+
+                  <JFXButton fx:id="btnLogout" onAction="#btnLogoutOnAction" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: transparent; -fx-border-color: #6c5ce7; -fx-border-radius: 8; -fx-border-width: 2;" text="Logout" textFill="#6c5ce7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8-logout-24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Label layoutX="110.0" layoutY="55.0" text="Health Care" textFill="#2d3436">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

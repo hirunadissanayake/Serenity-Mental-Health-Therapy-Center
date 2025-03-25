@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ancResetPw" prefHeight="616.0" prefWidth="1100.0" style="-fx-background-color: #f5f7fa;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.main.controller.ResetPasswordController">
+    <children>
+        <!-- Decorative elements -->
+        <Circle layoutX="97.0" layoutY="67.0" radius="120.0" style="-fx-fill: #6c5ce7; -fx-opacity: 0.1;" />
+        <Circle layoutX="450.0" layoutY="550.0" radius="80.0" style="-fx-fill: #00cec9; -fx-opacity: 0.1;" />
+
+        <!-- Left panel with reset password form -->
+        <Pane layoutX="50.0" layoutY="108.0" prefHeight="382.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+            <effect>
+                <DropShadow height="20.0" radius="9.5" width="20.0">
+                    <color>
+                        <Color opacity="0.1" />
+                    </color>
+                </DropShadow>
+            </effect>
+            <children>
+                <Label layoutX="40.0" layoutY="30.0" text="Reset Password" textFill="#2d3436">
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+                </Label>
+                <Label layoutX="40.0" layoutY="70.0" text="Create a new secure password" textFill="#636e72">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+
+                <Label layoutX="40.0" layoutY="150.0" text="New password" textFill="#636e72">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+
+                <PasswordField fx:id="txtNewPassword" layoutX="40.0" layoutY="180.0" prefHeight="46.0" prefWidth="320.0" promptText="Enter new password" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8; -fx-padding: 10;">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </PasswordField>
+
+                <Button fx:id="btnReset" layoutX="40.0" layoutY="240.0" mnemonicParsing="false" onAction="#resetPasswordOnAction" prefHeight="46.0" prefWidth="320.0" style="-fx-background-color: #6c5ce7; -fx-background-radius: 8;" text="CHANGE" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <DropShadow height="10.0" radius="4.5" width="10.0">
+                            <color>
+                                <Color opacity="0.2" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </Button>
+            </children>
+        </Pane>
+
+        <!-- Right panel with image -->
+        <Pane layoutX="500.0" layoutY="58.0" prefHeight="500.0" prefWidth="550.0" style="-fx-background-color: #2d3436; -fx-background-radius: 20;">
+            <effect>
+                <DropShadow height="20.0" radius="9.5" width="20.0">
+                    <color>
+                        <Color opacity="0.2" />
+                    </color>
+                </DropShadow>
+            </effect>
+            <children>
+                <ImageView fitHeight="450.0" fitWidth="500.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@../assets/photo_2025-03-22_15-33-33.jpg" />
+                    </image>
+                    <effect>
+                        <GaussianBlur radius="1.0" />
+                    </effect>
+                </ImageView>
+                <Label layoutX="50.0" layoutY="430.0" text="Serenity Mental Health Care" textFill="#a17e7ed9">
+                    <font>
+                        <Font name="System Bold" size="32.0" />
+                    </font>
+                </Label>
+                <Label layoutX="50.0" layoutY="476.0" text="Healing Minds, Nurturing Hope." textFill="#dfe6e9">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+
+        <!-- Logo in top left -->
+        <Circle layoutX="80.0" layoutY="47.0" radius="20.0" style="-fx-fill: #6c5ce7;" />
+        <Label layoutX="110.0" layoutY="37.0" text="Serenity Mental Health Care" textFill="#2d3436">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
