@@ -22,7 +22,7 @@
         <Circle layoutX="450.0" layoutY="550.0" radius="80.0" style="-fx-fill: #00cec9; -fx-opacity: 0.1;" />
 
         <!-- Left panel with sign-up form -->
-        <Pane layoutX="50.0" layoutY="108.0" prefHeight="450.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+        <Pane layoutX="50.0" layoutY="108.0" prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 20;">
             <effect>
                 <DropShadow height="20.0" radius="9.5" width="20.0">
                     <color>
@@ -42,31 +42,25 @@
                     </font>
                 </Label>
 
-                <TextField fx:id="txtFirstName" layoutX="40.0" layoutY="130.0" prefHeight="46.0" prefWidth="150.0" promptText="First Name" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8; -fx-padding: 10;">
+                <TextField fx:id="txtFirstName" layoutX="40.0" layoutY="120.0" prefHeight="46.0" prefWidth="320.0" promptText="User Name" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8; -fx-padding: 10;">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </TextField>
 
-                <TextField fx:id="txtLastName" layoutX="210.0" layoutY="130.0" prefHeight="46.0" prefWidth="150.0" promptText="Last Name" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8; -fx-padding: 10;">
+                <TextField fx:id="txtEmail" layoutX="40.0" layoutY="180.0" prefHeight="46.0" prefWidth="320.0" promptText="Email address" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8; -fx-padding: 10;">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </TextField>
 
-                <TextField fx:id="txtEmail" layoutX="40.0" layoutY="190.0" prefHeight="46.0" prefWidth="320.0" promptText="Email address" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8; -fx-padding: 10;">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </TextField>
-
-                <PasswordField fx:id="txtPassword" layoutX="40.0" layoutY="250.0" prefHeight="46.0" prefWidth="320.0" promptText="Password" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8; -fx-padding: 10;">
+                <PasswordField fx:id="txtPassword" layoutX="40.0" layoutY="240.0" prefHeight="46.0" prefWidth="150.0" promptText="Password" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8; -fx-padding: 10;">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </PasswordField>
 
-                <Button layoutX="40.0" layoutY="320.0" mnemonicParsing="false" onAction="#signUpOnAction" prefHeight="46.0" prefWidth="320.0" style="-fx-background-color: #6c5ce7; -fx-background-radius: 8;" text="SIGN UP" textFill="WHITE">
+                <Button layoutX="40.0" layoutY="362.0" mnemonicParsing="false" onAction="#signUpOnAction" prefHeight="46.0" prefWidth="320.0" style="-fx-background-color: #6c5ce7; -fx-background-radius: 8;" text="SIGN UP" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
@@ -82,13 +76,13 @@
                     </effect>
                 </Button>
 
-                <Label layoutX="180.0" layoutY="380.0" text="OR" textFill="#636e72">
+                <Label layoutX="180.0" layoutY="422.0" text="OR" textFill="#636e72">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Label>
 
-                <Button layoutX="85.0" layoutY="410.0" mnemonicParsing="false" onAction="#alreadyHaveAnAccountOnAction" style="-fx-background-color: transparent; -fx-border-color: #6c5ce7; -fx-border-radius: 8; -fx-border-width: 2;" text="Already have an account" textFill="#6c5ce7">
+                <Button layoutX="85.0" layoutY="452.0" mnemonicParsing="false" onAction="#alreadyHaveAnAccountOnAction" style="-fx-background-color: transparent; -fx-border-color: #6c5ce7; -fx-border-radius: 8; -fx-border-width: 2;" text="Already have an account" textFill="#6c5ce7">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
@@ -96,6 +90,21 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
+            <TextField fx:id="txtFirstName1" layoutX="38.0" layoutY="296.0" prefHeight="46.0" prefWidth="150.0" promptText="Admin Name" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8; -fx-padding: 10;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtLastName1" layoutX="208.0" layoutY="296.0" prefHeight="46.0" prefWidth="150.0" promptText="Admin Code" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8; -fx-padding: 10;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtLastName11" layoutX="208.0" layoutY="240.0" prefHeight="46.0" prefWidth="150.0" promptText="Role" style="-fx-background-color: #f5f7fa; -fx-background-radius: 8; -fx-padding: 10;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
             </children>
         </Pane>
 

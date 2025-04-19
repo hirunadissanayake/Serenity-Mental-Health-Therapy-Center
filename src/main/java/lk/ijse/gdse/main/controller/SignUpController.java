@@ -30,7 +30,7 @@ public class SignUpController {
 
     @FXML
     void alreadyHaveAnAccountOnAction(ActionEvent event) throws IOException {
-        setUi("/view/LogIn.fxml");
+        setUi("/view/Login.fxml");
     }
 
     @FXML

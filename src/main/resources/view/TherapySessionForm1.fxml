@@ -58,18 +58,6 @@
                      </padding>
                   </HBox>
                   <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="370.0">
-                     <children>
-                        <Text fill="#555557" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:" wrappingWidth="50.33673095703125">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="TxtDate" fill="#0071e3" strokeType="OUTSIDE" strokeWidth="0.0" text="2025/03/24" wrappingWidth="109.33673095703125">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                     </children>
                      <padding>
                         <Insets right="20.0" />
                      </padding>
@@ -203,8 +191,8 @@
             <TableView fx:id="TblSessionAppoinmnets" onMouseClicked="#TblSessionAppoinmnetsOnAction" prefHeight="220.0" prefWidth="740.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #e1e1e1; -fx-border-width: 1;">
                <columns>
                   <TableColumn fx:id="ColId" prefWidth="75.0" text="ID" />
-                  <TableColumn fx:id="ColName" prefWidth="100.0" text="Patient Name" />
-                  <TableColumn fx:id="ColTherapyProgram" prefWidth="120.0" text="Therapy Program" />
+                  <TableColumn fx:id="ColName" prefWidth="100.0" text="Patient " />
+                  <TableColumn fx:id="ColTherapyProgram" prefWidth="120.0" text="Therapist" />
                   <TableColumn fx:id="ColDate" prefWidth="100.0" text="Date" />
                   <TableColumn fx:id="ColTherapist" prefWidth="100.0" text="Therapist" />
                   <TableColumn fx:id="ColStatus" prefWidth="115.0" text="Status" />
