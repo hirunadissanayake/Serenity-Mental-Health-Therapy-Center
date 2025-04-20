@@ -15,6 +15,7 @@ module Serenity.Mental.Health.Therapy.Center {
     requires lombok;
     requires org.hibernate.orm.core;
     requires jakarta.persistence;
+    requires org.apache.commons.logging;
 
     // Opening packages for reflection (used by JavaFX & Hibernate)
     opens lk.ijse.gdse.main to javafx.graphics;

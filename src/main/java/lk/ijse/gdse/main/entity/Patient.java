@@ -28,4 +28,12 @@ public class Patient {
 
     @OneToMany(mappedBy = "patient",cascade = CascadeType.ALL)
     private List<TherapySession> therapySessions;
+
+    public Patient(String name, String dob, String gender, String contact, String medicalHistory) {
+        this.name = name;
+        this.dob = dob;
+        this.gender = gender;
+        this.contact = contact;
+        this.medicalHistory = medicalHistory;
+    }
 }

@@ -1,24 +1,28 @@
 package lk.ijse.gdse.main.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import lk.ijse.gdse.main.bo.BOFactory;
+import lk.ijse.gdse.main.bo.SuperBO;
+import lk.ijse.gdse.main.bo.custom.PatientBO;
+import lk.ijse.gdse.main.dto.PatientDTO;
+import lk.ijse.gdse.main.tm.PatientTm;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
-public class PatientController {
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
-    @FXML
-    private ComboBox<?> CmbTherapyPrograms;
+public class PatientController implements Initializable {
 
-    @FXML
-    private TextField TxtUpfrontPayment;
-
+    private static final Log log = LogFactory.getLog(PatientController.class);
     @FXML
     private Button btnAdd;
 
@@ -49,14 +53,13 @@ public class PatientController {
     @FXML
     private AnchorPane root;
 
-    @FXML
-    private TableView<?> tableView;
 
     @FXML
     private TextField txtContact;
 
     @FXML
     private TextField txtDOB;
+
 
     @FXML
     private TextField txtMedicalHistory;
@@ -65,28 +68,102 @@ public class PatientController {
     private TextField txtName;
 
     @FXML
-    void AddBtnOnClickAction(ActionEvent event) {
+    private TableColumn<PatientTm, String> colContact;
 
+    @FXML
+    private TableColumn<PatientTm, String> colDOB;
+
+    @FXML
+    private TableColumn<PatientTm, String> colGender;
+
+    @FXML
+    private TableColumn<PatientTm, String> colMediHistory;
+
+    @FXML
+    private TableColumn<PatientTm, String> colName;
+
+    @FXML
+    private TableColumn<PatientTm, String> colPatientId;
+
+    @FXML
+    private TableView<PatientTm> tableView;
+
+    PatientBO patientbo = (PatientBO) BOFactory.getInstance().getBO(BOFactory.type.PATIENT);
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        List<PatientDTO> allPatient = patientbo.getAllPatient();
+        load
+
+        ObservableList<Object> objects = FXCollections.observableArrayList();
     }
 
     @FXML
-    void CmbTherapyProgramsOnAction(ActionEvent event) {
+    void AddBtnOnClickAction(ActionEvent event) {
+        String name = txtName.getText();
+        String medicalHistory = txtMedicalHistory.getText();
+        String contact = txtContact.getText();
+        String dob = txtDOB.getText();
+        boolean selected = rbMale.isSelected();
+        String gender = "Female";
+        if (selected) {
+            gender = "Male";
+        }
 
+        boolean isSave = patientbo.savePatient(new PatientDTO(name, dob, gender, contact, medicalHistory));
+        if (isSave) {
+            new Alert(Alert.AlertType.INFORMATION, "Patient Saved", ButtonType.OK).show();
+            refreshPage();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Patient Not Saved", ButtonType.OK).show();
+        }
     }
 
     @FXML
     void DeleteBtnOnClickAction(ActionEvent event) {
-
+        String id = lblCustomerId.getText();
+        boolean isDelete = patientbo.deletePatient(id);
+        if (isDelete) {
+            new Alert(Alert.AlertType.INFORMATION, "Patient Delete", ButtonType.OK).show();
+            refreshPage();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Patient Not Deleted", ButtonType.OK).show();
+        }
     }
 
     @FXML
     void UpdateBtnOnClickAction(ActionEvent event) {
+        String name = txtName.getText();
+        String medicalHistory = txtMedicalHistory.getText();
+        String contact = txtContact.getText();
+        String dob = txtDOB.getText();
+        boolean selected = rbMale.isSelected();
+        String gender = "Female";
+        if (selected) {
+            gender = "Male";
+        }
 
+        boolean isUpdate = patientbo.updatePatient(new PatientDTO(name, dob, gender, contact, medicalHistory));
+        if (isUpdate) {
+            new Alert(Alert.AlertType.INFORMATION, "Patient Updated", ButtonType.OK).show();
+            refreshPage();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Patient Not Updated", ButtonType.OK).show();
+        }
     }
 
     @FXML
     void btnResetOnAction(ActionEvent event) {
+       refreshPage();
+    }
 
+    public void refreshPage(){
+        rbMale.setSelected(true);
+        rbFemale.setSelected(false);
+        txtName.clear();
+        txtMedicalHistory.clear();
+        txtContact.clear();
+        txtDOB.clear();
     }
 
 }

@@ -1,5 +1,6 @@
 package lk.ijse.gdse.main.bo;
 
+import lk.ijse.gdse.main.bo.custom.Impl.PatientBOImpl;
 import lk.ijse.gdse.main.bo.custom.Impl.SignUpBOImpl;
 import lk.ijse.gdse.main.bo.custom.SignUpBO;
 
@@ -9,7 +10,7 @@ public class BOFactory {
     public BOFactory() {}
 
     public enum type{
-        SIGNUP
+        SIGNUP,PATIENT
 
     }
 
@@ -24,7 +25,9 @@ public class BOFactory {
         switch (type){
             case SIGNUP:
                 return new SignUpBOImpl();
-                default: return null;
+            case PATIENT:
+                return new PatientBOImpl();
+            default: return null;
         }
     }
 }

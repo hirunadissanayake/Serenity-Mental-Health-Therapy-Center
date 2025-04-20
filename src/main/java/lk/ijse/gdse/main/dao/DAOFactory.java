@@ -1,6 +1,7 @@
 package lk.ijse.gdse.main.dao;
 
 
+import lk.ijse.gdse.main.dao.custom.impl.PatientDAOImpl;
 import lk.ijse.gdse.main.dao.custom.impl.UserDAOImpl;
 
 public class DAOFactory {
@@ -17,7 +18,7 @@ public class DAOFactory {
         return daoFactory;
     }
     public enum type{
-        SIGNUP
+        SIGNUP,PATIENT
 
     }
 
@@ -25,6 +26,8 @@ public class DAOFactory {
         switch (type){
             case SIGNUP:
                 return new UserDAOImpl();
+            case PATIENT:
+                return new PatientDAOImpl();
             default: return null;
         }
     }
