@@ -14,4 +14,6 @@ public interface PatientDAO extends SuperDAO {
     boolean update(Patient patient);
 
     List<Patient> getAll();
+
+    String loadNextId();
 }

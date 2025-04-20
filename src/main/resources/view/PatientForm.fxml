@@ -222,7 +222,7 @@
                </children>
             </HBox>
 
-                  <TableView fx:id="tableView" prefHeight="85.0" prefWidth="740.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #e1e1e1; -fx-border-width: 1;">
+                  <TableView fx:id="tableView" onMouseClicked="#loadDataMouseClickOnAction" prefHeight="85.0" prefWidth="740.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #e1e1e1; -fx-border-width: 1;">
                <columns>
                   <TableColumn fx:id="colPatientId" prefWidth="75.0" text="Patient ID" />
                   <TableColumn fx:id="colName" prefWidth="120.0" text="Name" />

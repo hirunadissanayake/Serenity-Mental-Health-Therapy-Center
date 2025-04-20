@@ -13,4 +13,6 @@ public interface PatientBO extends SuperBO {
     boolean updatePatient(PatientDTO patientDTO);
 
     List<PatientDTO> getAllPatient();
+
+    String loadNextId();
 }

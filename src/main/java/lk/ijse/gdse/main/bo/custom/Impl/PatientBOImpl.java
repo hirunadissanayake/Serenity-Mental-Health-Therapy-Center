@@ -3,7 +3,6 @@ package lk.ijse.gdse.main.bo.custom.Impl;
 import lk.ijse.gdse.main.bo.custom.PatientBO;
 import lk.ijse.gdse.main.dao.DAOFactory;
 import lk.ijse.gdse.main.dao.custom.PatientDAO;
-import lk.ijse.gdse.main.dao.custom.UserDAO;
 import lk.ijse.gdse.main.dto.PatientDTO;
 import lk.ijse.gdse.main.entity.Patient;
 
@@ -15,7 +14,8 @@ public class PatientBOImpl implements PatientBO {
     PatientDAO patientDAO = (PatientDAO) DAOFactory.getInstance().getDAO(DAOFactory.type.PATIENT);
     @Override
     public boolean savePatient(PatientDTO patientDTO) {
-        return patientDAO.save(new Patient(patientDTO.getName(),patientDTO.getDob(),patientDTO.getGender(),patientDTO.getContact(),patientDTO.getMedicalHistory()));
+        System.out.println(patientDTO.toString());
+        return patientDAO.save(new Patient(patientDTO.getId(),patientDTO.getName(),patientDTO.getDob(),patientDTO.getGender(),patientDTO.getContact(),patientDTO.getMedicalHistory()));
     }
 
     @Override
@@ -25,7 +25,7 @@ public class PatientBOImpl implements PatientBO {
 
     @Override
     public boolean updatePatient(PatientDTO patientDTO) {
-        return patientDAO.update(new Patient(patientDTO.getName(),patientDTO.getDob(),patientDTO.getGender(),patientDTO.getContact(),patientDTO.getMedicalHistory()));
+        return patientDAO.update(new Patient(patientDTO.getId(),patientDTO.getName(),patientDTO.getDob(),patientDTO.getGender(),patientDTO.getContact(),patientDTO.getMedicalHistory()));
     }
 
     @Override
@@ -34,9 +34,15 @@ public class PatientBOImpl implements PatientBO {
         List<PatientDTO> patientDTOList = new ArrayList<>();
 
         for (Patient patient : all) {
-            patientDTOList.add(new PatientDTO(patient.getName(),patient.getDob(),patient.getGender(),patient.getContact(),patient.getMedicalHistory()));
+            patientDTOList.add(new PatientDTO(patient.getId(),patient.getName(),patient.getDob(),patient.getGender(),patient.getContact(),patient.getMedicalHistory()));
         }
 
+
         return patientDTOList;
+    }
+
+    @Override
+    public String loadNextId() {
+        return patientDAO.loadNextId();
     }
 }

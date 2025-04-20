@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import lk.ijse.gdse.main.bo.BOFactory;
@@ -92,14 +94,36 @@ public class PatientController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        loadTables();
+        loadNextId();
+    }
+
+    private void loadNextId() {
+        String id = patientbo.loadNextId();
+        lblCustomerId.setText(id);
+    }
+
+    private void loadTables() {
+        colPatientId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colDOB.setCellValueFactory(new PropertyValueFactory<>("dob"));
+        colGender.setCellValueFactory(new PropertyValueFactory<>("gender"));
+        colContact.setCellValueFactory(new PropertyValueFactory<>("contact"));
+        colMediHistory.setCellValueFactory(new PropertyValueFactory<>("medicalHistory"));
+
         List<PatientDTO> allPatient = patientbo.getAllPatient();
+        ObservableList<PatientTm> objects = FXCollections.observableArrayList();
+        for (PatientDTO patient : allPatient) {
+            System.out.println("aaaaaaaaaaaaaaaammmm"+patient.toString());
+            objects.add(new PatientTm(patient.getId(),patient.getName(),patient.getDob(),patient.getGender(),patient.getContact(),patient.getMedicalHistory()));
+        }
 
-
-        ObservableList<Object> objects = FXCollections.observableArrayList();
+        tableView.setItems(objects);
     }
 
     @FXML
     void AddBtnOnClickAction(ActionEvent event) {
+        String id = lblCustomerId.getText();
         String name = txtName.getText();
         String medicalHistory = txtMedicalHistory.getText();
         String contact = txtContact.getText();
@@ -110,10 +134,11 @@ public class PatientController implements Initializable {
             gender = "Male";
         }
 
-        boolean isSave = patientbo.savePatient(new PatientDTO(name, dob, gender, contact, medicalHistory));
+        boolean isSave = patientbo.savePatient(new PatientDTO(id,name, dob, gender, contact, medicalHistory));
         if (isSave) {
             new Alert(Alert.AlertType.INFORMATION, "Patient Saved", ButtonType.OK).show();
             refreshPage();
+            loadTables();
         } else {
             new Alert(Alert.AlertType.ERROR, "Patient Not Saved", ButtonType.OK).show();
         }
@@ -126,6 +151,7 @@ public class PatientController implements Initializable {
         if (isDelete) {
             new Alert(Alert.AlertType.INFORMATION, "Patient Delete", ButtonType.OK).show();
             refreshPage();
+            loadTables();
         } else {
             new Alert(Alert.AlertType.ERROR, "Patient Not Deleted", ButtonType.OK).show();
         }
@@ -133,6 +159,7 @@ public class PatientController implements Initializable {
 
     @FXML
     void UpdateBtnOnClickAction(ActionEvent event) {
+        String id = lblCustomerId.getText();
         String name = txtName.getText();
         String medicalHistory = txtMedicalHistory.getText();
         String contact = txtContact.getText();
@@ -143,10 +170,11 @@ public class PatientController implements Initializable {
             gender = "Male";
         }
 
-        boolean isUpdate = patientbo.updatePatient(new PatientDTO(name, dob, gender, contact, medicalHistory));
+        boolean isUpdate = patientbo.updatePatient(new PatientDTO(id ,name, dob, gender, contact, medicalHistory));
         if (isUpdate) {
             new Alert(Alert.AlertType.INFORMATION, "Patient Updated", ButtonType.OK).show();
             refreshPage();
+            loadTables();
         } else {
             new Alert(Alert.AlertType.ERROR, "Patient Not Updated", ButtonType.OK).show();
         }
@@ -164,6 +192,22 @@ public class PatientController implements Initializable {
         txtMedicalHistory.clear();
         txtContact.clear();
         txtDOB.clear();
+        loadNextId();
     }
 
+    public void loadDataMouseClickOnAction(MouseEvent mouseEvent) {
+        PatientTm selectedItem = tableView.getSelectionModel().getSelectedItem();
+        lblCustomerId.setText(selectedItem.getId());
+        txtName.setText(selectedItem.getName());
+        txtContact.setText(selectedItem.getContact());
+        txtDOB.setText(selectedItem.getDob());
+        txtMedicalHistory.setText(selectedItem.getMedicalHistory());
+        String gender = selectedItem.getGender();
+
+        if (gender.equals("Female")) {
+            rbFemale.setSelected(true);
+        } else {
+            rbMale.setSelected(true);
+        }
+    }
 }

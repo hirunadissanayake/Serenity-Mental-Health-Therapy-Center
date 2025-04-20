@@ -155,7 +155,7 @@
                </padding>
             </HBox>
 
-            <TableView fx:id="tblTherapist" prefHeight="240.0" prefWidth="740.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #e1e1e1; -fx-border-width: 1;">
+            <TableView fx:id="tblTherapist" prefHeight="186.0" prefWidth="740.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #e1e1e1; -fx-border-width: 1;">
                <columns>
                   <TableColumn prefWidth="130.0" text="Therapist ID" />
                   <TableColumn prefWidth="220.0" text="Name" />

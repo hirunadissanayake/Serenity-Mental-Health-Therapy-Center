@@ -21,7 +21,7 @@ module Serenity.Mental.Health.Therapy.Center {
     opens lk.ijse.gdse.main to javafx.graphics;
     opens lk.ijse.gdse.main.controller to javafx.fxml;
     opens lk.ijse.gdse.main.entity to org.hibernate.orm.core; // for Hibernate to access your entity classes
-
+    opens lk.ijse.gdse.main.tm to javafx.base;
     // Exporting packages (optional depending on usage)
     exports lk.ijse.gdse.main.controller;
 }
