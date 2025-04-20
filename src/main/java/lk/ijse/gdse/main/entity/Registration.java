@@ -1,5 +1,7 @@
 package lk.ijse.gdse.main.entity;
 
+import jakarta.persistence.Id;
+
 import java.time.LocalDate;
 
 import jakarta.persistence.*;
@@ -7,25 +9,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "therapy_sessions")
-public class TherapySession {
+@Table(name = "registration")
+public class Registration {
     @Id
     private String id;
 
-    private LocalDate appointmentDate;
-    private String status;
+    private LocalDate date;
+    private double advancePayment;
     /*private String patientId;
-    private String programId;
-    private String therapistId;*/
-
-    @ManyToOne
-    @JoinColumn(name = "therapist_id")
-    private Therapist therapist;
+    private String programId;*/
 
     @ManyToOne
     @JoinColumn(name = "patient_id")
@@ -34,8 +32,5 @@ public class TherapySession {
     @ManyToOne
     @JoinColumn(name = "program_id")
     private TherapyProgram therapyProgram;
-
-
-
 
 }

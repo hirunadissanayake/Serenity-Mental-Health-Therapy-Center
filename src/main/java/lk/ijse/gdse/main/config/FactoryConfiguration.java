@@ -1,5 +1,6 @@
 package lk.ijse.gdse.main.config;
 
+import lk.ijse.gdse.main.entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -22,6 +23,13 @@ public class FactoryConfiguration {
             throw new RuntimeException(e);
         }
         configuration.setProperties(properties);
+        configuration.addAnnotatedClass(TherapySession.class);
+        configuration.addAnnotatedClass(Patient.class);
+        configuration.addAnnotatedClass(TherapyProgram.class);
+        configuration.addAnnotatedClass(Payment.class);
+        configuration.addAnnotatedClass(Registration.class);
+        configuration.addAnnotatedClass(User.class);
+        configuration.addAnnotatedClass(Therapist.class);
 
         sessionFactory = configuration.buildSessionFactory();
 

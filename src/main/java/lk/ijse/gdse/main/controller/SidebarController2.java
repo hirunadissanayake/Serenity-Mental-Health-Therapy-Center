@@ -10,18 +10,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.gdse.main.bo.BOFactory;
-import lk.ijse.gdse.main.bo.custom.SignUpBO;
-import lk.ijse.gdse.main.dto.UserDTO;
 import lombok.SneakyThrows;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class SidebarController implements Initializable {
-
+public class SidebarController2 implements Initializable {
 
     @FXML
     private AnchorPane ancLoading;
@@ -52,21 +47,18 @@ public class SidebarController implements Initializable {
 
     @FXML
     private AnchorPane mainAnc;
-
     @SneakyThrows
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-            ancLoading.getChildren().clear();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Dashboard1.fxml"));
-            Parent load = loader.load();
-            ancLoading.getChildren().add(load);
+        ancLoading.getChildren().clear();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Dashboard2.fxml"));
+        Parent load = loader.load();
+        ancLoading.getChildren().add(load);
     }
-
 
     @FXML
     void btnDashboardOnAction(ActionEvent event) throws IOException {
-        navigateTo("/view/Dashboard1.fxml");
-
+        navigateTo("/view/Dashboard2.fxml");
     }
 
     @FXML
@@ -91,8 +83,8 @@ public class SidebarController implements Initializable {
     }
 
     @FXML
-    void btnTherapyProOnAction(ActionEvent event) throws IOException {
-        navigateTo("/view/TherapyProgramForm.fxml");
+    void btnTherapyProOnAction(ActionEvent event) {
+
     }
 
     @FXML
@@ -101,9 +93,10 @@ public class SidebarController implements Initializable {
     }
 
     @FXML
-    void btnUserOnAction(ActionEvent event) throws IOException {
-        navigateTo("/view/UserForm.fxml");
+    void btnUserOnAction(ActionEvent event) {
+
     }
+
     public void navigateTo(String fxmlPath) throws IOException {
         try{
             ancLoading.getChildren().clear();
@@ -117,9 +110,5 @@ public class SidebarController implements Initializable {
 
     public void btnRegisterOnAction(ActionEvent event) throws IOException {
         navigateTo("/view/Registration.fxml");
-    }
-
-    public void btnTherapistOnAction(ActionEvent event) throws IOException {
-        navigateTo("/view/TherapistForm.fxml");
     }
 }

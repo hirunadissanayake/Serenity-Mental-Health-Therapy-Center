@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="root" prefHeight="604.0" prefWidth="800.0" style="-fx-background-color: #f5f5f7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.controller.RegistrationController">
+<AnchorPane fx:id="root" prefHeight="604.0" prefWidth="800.0" style="-fx-background-color: #f5f5f7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.main.controller.RegistrationController">
     <children>
         <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#ffffff" height="648.0" layoutX="12.0" layoutY="11.0" stroke="TRANSPARENT" strokeType="INSIDE" width="777.0">
             <effect>
@@ -96,11 +96,7 @@
                                         <Font name="System Bold" size="14.0" />
                                     </font>
                                 </Text>
-                                <TextField fx:id="TxtEmail" prefHeight="35.0" prefWidth="200.0" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e1e1e1; -fx-border-width: 1; -fx-background-color: white;">
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                </TextField>
+                        <ComboBox prefHeight="26.0" prefWidth="196.0" />
                             </children>
                             <padding>
                                 <Insets left="20.0" />

@@ -6,6 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import lk.ijse.gdse.main.config.FactoryConfiguration;
+import lk.ijse.gdse.main.entity.User;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.io.IOException;
 
@@ -35,5 +39,17 @@ public class AppInitializer extends Application {
         });
         new Thread(task).start();
 
+//        Session session = FactoryConfiguration.getInstance().getSession();
+//        Transaction transaction = session.beginTransaction();
+//        User user = new User();
+//        user.setUsername("admin");
+//        user.setPassword("1111");
+//        user.setEmail("admin@gmail.com");
+//        user.setRole("admin");
+
+
+//        session.persist(user);
+//        transaction.commit();
+//        session.close();
     }
 }

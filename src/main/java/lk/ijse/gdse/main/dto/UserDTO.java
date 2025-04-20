@@ -1,5 +1,6 @@
 package lk.ijse.gdse.main.dto;
 
+import jakarta.persistence.Column;
 import lombok.*;
 
 @Getter
@@ -8,8 +9,17 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 public class UserDTO {
-    private String firstName;
-    private String lastName;
-    private String email;
+    private String username;
     private String password;
+    private String email;
+    private String role;
+    private String adminName;
+    private String adminCode;
+
+    public UserDTO(String username, String password, String email, String role) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.role = role;
+    }
 }

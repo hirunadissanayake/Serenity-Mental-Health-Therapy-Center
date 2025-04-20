@@ -192,7 +192,7 @@
                <columns>
                   <TableColumn fx:id="ColId" prefWidth="75.0" text="ID" />
                   <TableColumn fx:id="ColName" prefWidth="100.0" text="Patient " />
-                  <TableColumn fx:id="ColTherapyProgram" prefWidth="120.0" text="Therapist" />
+                  <TableColumn fx:id="ColTherapyProgram" prefWidth="120.0" text="program" />
                   <TableColumn fx:id="ColDate" prefWidth="100.0" text="Date" />
                   <TableColumn fx:id="ColTherapist" prefWidth="100.0" text="Therapist" />
                   <TableColumn fx:id="ColStatus" prefWidth="115.0" text="Status" />
