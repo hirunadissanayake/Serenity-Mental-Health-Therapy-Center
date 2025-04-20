@@ -93,7 +93,7 @@ public class PatientController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         List<PatientDTO> allPatient = patientbo.getAllPatient();
-        load
+
 
         ObservableList<Object> objects = FXCollections.observableArrayList();
     }
